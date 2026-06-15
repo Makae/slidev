@@ -1,0 +1,18 @@
+services:
+  dev:
+    build: ./docker
+    ports:
+      - "3030:3030"
+    volumes:
+      - ./slides:/slidev/slides
+      - ./dist:/slidev/dist
+    command: slidev /slidev/slides/slides.md --port 3030 --remote
+
+  export:
+    build: ./docker
+    volumes:
+      - ./slides:/slidev/slides
+      - ./dist:/slidev/dist
+    command: slidev export /slidev/slides/slides.md --output /slidev/dist/slides.pdf
+    profiles:
+      - export

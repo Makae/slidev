@@ -1,0 +1,10 @@
+docker-compose.yml
+Dockerfile
+dist
+slides
+.idea
+node_modules
+.gitignore
+.git
+README.md
+LICENSE
