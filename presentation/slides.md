@@ -3,7 +3,7 @@ theme: seriph
 title: Slidev – Präsentationen für IT-Profis
 titleTemplate: '%s | Slidev'
 info: |
-  ## Slidev für IT Lehrlinge
+  ## Slidev für IT Lehrlinge 
   Eine Einführung für IT-Lehrpersonen in der Schweiz
 author: IT-Lehrperson
 keywords: slidev, präsentation, it, lehrlinge, ausbildung, schweiz
@@ -17,7 +17,7 @@ mdc: true
 
 # Slidev
 
-### Präsentationen mit Code – für IT-Lehrlinge
+### Präsentationen mit Code – für IT-Lehrlinge UPDATE
 
 <div class="pt-12">
   <span class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -34,6 +34,22 @@ mdc: true
 <!--
 Herzlich willkommen! Heute zeige ich euch ein Werkzeug, das Präsentationen mit modernem Entwickler-Workflow verbindet: Slidev. Die Idee: Wer Markdown und Code kennt, kann damit professionelle Präsentationen erstellen – ideal für unsere IT-Lehrlinge.
 -->
+
+---
+layout: TwoColsFooter
+---
+
+::left::
+# Custom Layouts
+
+::footer-left::
+## Footer left
+
+::right::
+# Right
+
+::footer-right::
+## Footer right
 
 ---
 layout: default
