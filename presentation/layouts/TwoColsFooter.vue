@@ -1,34 +1,38 @@
 <script setup>
 </script>
 <style scoped>
-    .custom-style {
-      background-color: #f3f4f6;
-      padding: 2rem;
-      border-radius: 8px;
-      border-color: black;
-      border-style: dotted;
-      border-width: 4px;
-      display:flex;
+    .footer-layout {
+      display: grid;
+      height: 100%;
+      grid-template-columns: auto auto;
+      grid-template-rows: 90% auto;
       gap: 1rem;
-      width: 100%;
-      justify-content: center;
-      *> {
-        width: 50%;
-        border: 1px solid green;
+    }
+    .footer-layout > .footer > *  {
+      margin: 0.75rem;
+      box-sizing: border-box;
+    }
+    .footer-layout > .footer {
+      background-color: #857bb4;
 
-      }
+    }
+    .footer-layout > .footer-right {
+      text-align: right;
     }
   </style>
 <template>
-
-  <div class="slidev-layout custom-style">
+  <div class="slidev-layout footer-layout">
     <div class="left">
       <slot name="left" />
-      <slot name="footer-left" />
-    </div>
+   </div>
     <div class="right">
       <slot name="right" />
-      <slot name="footer-right" class="footer"/>
+    </div>
+    <div class="footer footer-left">
+      <slot name="footer-left" />
+    </div>
+    <div class="footer footer-right">
+      <slot name="footer-right"/>
     </div>
   </div>
 </template>

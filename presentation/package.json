@@ -2,9 +2,9 @@
   "name": "slidev",
   "private": true,
   "scripts": {
-    "dev": "slidev --open",
-    "build": "slidev build",
-    "export": "slidev export"
+    "dev": "slidev presentation.md --open ",
+    "buildsl": "slidev build presentation",
+    "export": "slidev export presentation"
   },
   "dependencies": {
     "@slidev/cli": "^0.50.0",

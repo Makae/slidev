@@ -35,21 +35,6 @@ mdc: true
 Herzlich willkommen! Heute zeige ich euch ein Werkzeug, das Präsentationen mit modernem Entwickler-Workflow verbindet: Slidev. Die Idee: Wer Markdown und Code kennt, kann damit professionelle Präsentationen erstellen – ideal für unsere IT-Lehrlinge.
 -->
 
----
-layout: TwoColsFooter
----
-
-::left::
-# Custom Layouts
-
-::footer-left::
-## Footer left
-
-::right::
-# Right
-
-::footer-right::
-## Footer right
 
 ---
 layout: default
@@ -106,29 +91,17 @@ Slidev ist kein PowerPoint-Ersatz, sondern ein Tool für Leute, die schon mit Co
 -->
 
 ---
-layout: section
----
-
-# Warum Slidev für IT-Lehrlinge?
-
----
-layout: quote
----
-
-> «Lehrlinge präsentieren im Betrieb, in der Schule und an der LAP – und tun das oft mit veralteten Tools, obwohl sie täglich mit Code arbeiten.»
-
----
 
 # Warum Slidev?
+<v-clicks>
 
-| Aspekt | PowerPoint / Google Slides | Slidev |
-|--------|---------------------------|--------|
-| Format | Binary / proprietär | Markdown (Text) |
-| Versionierung | Schwierig | Git-freundlich ✅ |
-| Code-Blöcke | Umständlich | Erstklassig ✅ |
-| Kollaboration | Sync-Probleme | wie normaler Code ✅ |
-| Lernkurve | Tief | Mittel (Markdown) |
-| Preis | Teils kostenpflichtig | Kostenlos ✅ |
+* Git-freundlich
+* Code-Highlighting
+* Codenahes arbeiten für IT-Lehrlinge
+* Themes & Layouts über CSS
+* Kostenlos
+
+</v-clicks>
 
 <!--
 Für IT-Lehrlinge ist die Stärke klar: Sie arbeiten sowieso mit Markdown, Git und Code. Slidev passt in ihren Workflow. Das fördert auch technische Kompetenz – Präsentation als Code.
@@ -162,13 +135,11 @@ layout: two-cols
 ---
 
 # Links
-
 Inhalt links
 
 ::right::
 
 # Rechts
-
 Inhalt rechts
 ````
 
@@ -177,13 +148,29 @@ Die gesamte Präsentation ist eine einzige .md-Datei. Das ist der Kern von Slide
 -->
 
 ---
+layout: two-cols
+---
 
 # Syntax-Highlighting
 
-Slidev nutzt [Shiki](https://shiki.style) für erstklassiges Code-Highlighting:
+Slidev nutzt [Shiki](https://shiki.style) für Code-Highlighting:
 
 ````md
-```python {1-3|4-6|all}
+    ```python {none|1-3|4-6|all}
+    def fibonacci(n: int) -> int:
+        if n <= 1:
+            return n
+        a, b = 0, 1
+        for _ in range(2, n + 1):
+            a, b = b, a + b
+        return b
+    ```
+````
+
+::right::
+Zeilen werden schrittweise hervorgehoben
+
+```python {none|1-3|4-6|all}
 def fibonacci(n: int) -> int:
     if n <= 1:
         return n
@@ -191,18 +178,6 @@ def fibonacci(n: int) -> int:
     for _ in range(2, n + 1):
         a, b = b, a + b
     return b
-```
-````
-
-**Ergebnis:** Zeilen werden schrittweise hervorgehoben (`{1-3|4-6|all}`)
-
-```python {1-3|4-6|all}
-def fibonacci(n: int) -> int:
-    if n <= 1:
-        return n
-a, b = 0, 1
-for _ in range(2, n + 1):
-    a, b = b, a + b
 ```
 
 <!--
@@ -295,12 +270,12 @@ theme: seriph
 
 **Offizielle Themes:**
 
-| Theme | Stil |
-|-------|------|
-| `default` | Minimal, sauber |
-| `seriph` | Formal, Serif-Schrift (diese Präsentation) |
-| `apple-basic` | Modern, Apple-Keynote-Stil |
-| `bricks` | Hell, geometrisch |
+| Theme         | Stil                                       |
+|---------------|--------------------------------------------|
+| `default`     | Minimal, sauber                            |
+| `seriph`      | Formal, Serif-Schrift (diese Präsentation) |
+| `apple-basic` | Modern, Apple-Keynote-Stil                 |
+| `bricks`      | Hell, geometrisch                          |
 
 Community-Themes: [sli.dev/themes/gallery](https://sli.dev/themes/gallery.html)
 
@@ -328,6 +303,7 @@ Nur im Presenter-Modus sichtbar.
 ```
 
 **Presenter-Modus starten:**
+
 ```bash
 slidev --open
 ```
@@ -348,7 +324,7 @@ Dann: Präsentations-Fenster + Notizen-Fenster gleichzeitig
 </div>
 
 <!--
-Der Presenter-Modus ist professionell: Man sieht die eigenen Notizen, den Timer und die nächste Folie. Genau wie in Keynote oder PowerPoint – aber komplett im Browser.
+Der Presenter-Modus ist professionell: Man sieht die eigenen Notizen, den Timer und die nächste Folie. Genau wie in Keynote oder PowerPoint – aber komplett im Browser. Yes
 -->
 
 ---
@@ -366,11 +342,11 @@ slidev export --format png
 slidev build
 ```
 
-| Format | Einsatz |
-|--------|---------|
-| PDF | Abgabe, Druck, E-Mail |
-| PNG | Vorschaubilder, Thumbnails |
-| SPA | Hosting auf GitHub Pages, Netlify |
+| Format | Einsatz                           |
+|--------|-----------------------------------|
+| PDF    | Abgabe, Druck, E-Mail             |
+| PNG    | Vorschaubilder, Thumbnails        |
+| SPA    | Hosting auf GitHub Pages, Netlify |
 
 <!--
 Lehrlinge können ihre Präsentation als PDF abgeben oder direkt auf GitHub Pages hosten – ohne Kosten, ohne fremde Cloud-Services.
@@ -401,6 +377,7 @@ git checkout -b feedback/kapitel-2
 ```
 
 **Vorteile:**
+
 - 📜 Vollständige **Versionsgeschichte**
 - 🔍 Diff-Ansicht zeigt genau was sich geändert hat
 - 🤝 **Pull Requests** für Feedback möglich
@@ -411,53 +388,16 @@ Das ist der Moment, wo Lehrlinge merken: Das ist nicht nur Präsentation, das is
 -->
 
 ---
-layout: section
----
-
-# Einsatz im Unterricht
-
----
-
-# Mögliche Einsatzszenarien für Lehrlinge
-
-<v-click>
-
-**🎓 Schulische Präsentationen**
-- Modul-Abschlüsse, Projektpräsentationen
-- Semesterarbeiten an Berufsfachschulen
-
-</v-click>
-
-<v-click>
-
-**🏢 Betriebliche Präsentationen**
-- Technische Konzepte erklären (Architektur, APIs)
-- Sprint Reviews, Team-Updates
-
-</v-click>
-
-<v-click>
-
-**📋 Abschlussprüfung (LAP)**
-- Individuelle praktische Arbeit (IPA) vorstellen
-- Technische Dokumentation begleiten
-
-</v-click>
-
-<!--
-Slidev ist besonders für die IPA-Präsentation interessant: Die Lehrlinge müssen ihre Arbeit vor einer Kommission vorstellen. Mit Slidev haben sie ein professionelles, versioniertes Dokument.
--->
-
----
 
 # Erste Schritte im Unterricht
 
 **Voraussetzungen:**
+
 - Node.js 18+ installiert
 - Grundkenntnisse Markdown (1 Lektion reicht)
 - Git (optional, aber empfohlen)
 
-**Einstieg in 3 Befehlen:**
+**Einstieg in 4 Befehlen**
 
 ```bash
 # Neues Slidev-Projekt erstellen
@@ -465,6 +405,7 @@ npm create slidev@latest meine-praesentation
 
 # In Ordner wechseln & starten
 cd meine-praesentation
+npm i
 npm run dev
 ```
 
@@ -472,29 +413,6 @@ npm run dev
 
 <!--
 Das Schöne: In 5 Minuten haben Lehrlinge ihre erste laufende Präsentation. Danach lernen sie durch Ausprobieren. Das motiviert.
--->
-
----
-
-# Empfehlung: Lernpfad für Lehrlinge
-
-```
-Woche 1    → Markdown-Grundlagen (bereits bekannt?)
-Woche 2    → Erste Slidev-Präsentation erstellen
-Woche 3    → Code-Highlighting, v-click, Layouts
-Woche 4    → Git-Integration, Export, Hosting
-Optional   → Eigenes Theme / Vue-Komponenten
-```
-
-**Ressourcen:**
-
-- 📖 Dokumentation: [sli.dev](https://sli.dev)
-- 🎨 Theme-Galerie: [sli.dev/themes/gallery](https://sli.dev/themes/gallery.html)
-- 💡 Beispiele: [github.com/slidevjs/slidev](https://github.com/slidevjs/slidev)
-- 🚀 Showcase: [sli.dev/showcases](https://sli.dev/showcases.html)
-
-<!--
-Der Lernpfad ist bewusst kurz gehalten. Slidev soll ein Werkzeug sein, kein Lernziel. Wenn Lehrlinge schon Markdown und Git kennen, ist der Aufwand minimal.
 -->
 
 ---
@@ -557,6 +475,7 @@ layout: end
 <div>
 
 **Weiterführendes**
+
 - [sli.dev](https://sli.dev) — Offizielle Doku
 - [sli.dev/themes/gallery](https://sli.dev/themes/gallery.html) — Themes
 - [github.com/slidevjs/slidev](https://github.com/slidevjs/slidev) — GitHub
@@ -565,6 +484,7 @@ layout: end
 <div>
 
 **Diese Präsentation**
+
 - Erstellt mit Slidev + Theme `seriph`
 - Liegt als `slides.md` im Repo
 - Startbar via Docker Compose
@@ -575,3 +495,72 @@ layout: end
 <!--
 Danke für eure Aufmerksamkeit! Habt ihr Fragen zu Slidev, zum Einsatz im Unterricht oder zu technischen Details?
 -->
+
+
+---
+layout: TwoColsFooter
+---
+
+::left::
+
+# Custom Layouts
+
+## Template - Vue.js
+
+```html {all|4,7,10,13,all}
+
+<template>
+    <div class="slidev-layout footer-layout">
+        <div class="left">
+            <slot name="left"/>
+        </div>
+        <div class="right">
+            <slot name="right"/>
+        </div>
+        <div class="footer footer-left">
+            <slot name="footer-left"/>
+        </div>
+        <div class="footer footer-right">
+            <slot name="footer-right"/>
+        </div>
+    </div>
+</template>
+```
+
+::right::
+
+# <span style="opacity:0">Markdown</span>
+
+## Markdown
+
+```md {none|2,6,10,13|all}
+# Custom Layouts
+
+::left::
+
+## Template - Vue.js
+
+((SOME md here ;-) ))
+
+::right::
+
+## Markdown
+
+((SOME md here ;-) ))
+
+::footer-left::
+
+#### Some Footer Content
+
+::footer-right::
+
+#### Speaker: Martin Käser
+```
+
+::footer-left::
+
+#### Some Footer Content
+
+::footer-right::
+
+#### Speaker: Martin Käser

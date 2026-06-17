@@ -1,0 +1,22 @@
+/*
+Fix issues with search dropdown
+*/
+#slidev-goto-dialog > .autocomplete-list {
+  display: block !important;
+}
+#slidev-goto-dialog.-top-20 > .autocomplete-list{
+  display: none  !important;
+}
+
+/* two-columns fixes* */
+.slidev-layout.two-columns {
+    gap: 1.5rem;
+}
+
+.slidev-layout.two-columns > .col-right {
+    margin-top: 2rem
+}
+
+.two-cols-header {
+    max-height: 2em;
+}
